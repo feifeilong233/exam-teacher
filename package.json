@@ -23,7 +23,7 @@
     "redux": "^3.7.2"
   },
   "devDependencies": {
-    "less": "^3.0.1",
+    "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "autoprefixer": "^8.0.0",
     "autoprefixer-loader": "^3.2.0",

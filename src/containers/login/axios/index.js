@@ -11,12 +11,13 @@ export const axiosLogin = function(params,success,error){
       password : params.password
     }
   })
-  .then((res)=>{
-    success(res.data);
-  })
-  .catch(function (err) {
-      error(err);
-  });
+      .then((res)=>{
+        //console.log(res)
+        success(res.data);
+      })
+      .catch(function (err) {
+        error(err);
+      });
 }
 
 

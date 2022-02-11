@@ -50,6 +50,27 @@ module.exports = {
             limit : '8192'
           }
         }
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          },
+          {
+            loader: "less-loader",
+            options: {
+              sourceMap: true,
+              modifyVars: {
+                '@primary-color': '#f47983',
+                '@border-radius-base': '5px',
+              },
+              javascriptEnabled: true,
+            }
+          }]
       }
     ]
   },

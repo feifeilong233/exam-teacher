@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'
-import 'antd/dist/antd.css'
+import 'antd/dist/antd.less'
 import './assets/css/style.css'
 import login from './containers/login/index.js'
 import main from './containers/main/index.js'
@@ -21,4 +21,4 @@ ReactDOM.render((
 			</div>
 		</HashRouter>
 	</Provider>
-	),document.getElementById('app'));
+),document.getElementById('app'));
