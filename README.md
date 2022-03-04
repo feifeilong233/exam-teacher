@@ -96,20 +96,20 @@ http://liqianwen.remmli.com:8080/#/login
 |   |    --- httpServer.js                  ---http请求封装组件
 |   +-- containers                          ---页面（智能组件）目录
 |   |    +-- login                          ---登陆界面        
-|   |    |    --- index.js
+|   |    |    --- add_paper.js
 |   |    +-- main                           ---主界面
 |   |    |    +-- q_checkin                 ---试题录入
 |   |    |    |    +-- subpage              ---子模块
 |   |    |    |    |    --- q_single.js     ---选择题录入子模块
 |   |    |    |    |    --- q_fill_in.js    ---填空题录入子模块
 |   |    |    |    |    --- ...             ---其他题型录入子模块
-|   |    |    |    --- index.js
+|   |    |    |    --- add_paper.js
 |   |    |    +-- choose_questions          ---出卷
 |   |    |    |    +-- subpage              ---子模块
 |   |    |    |    |    --- choose_card.js
-|   |    |    |    --- index.js
+|   |    |    |    --- add_paper.js
 |   |    |    +-- score_search              ---成绩查询
-|   |    |    |    --- index.js
+|   |    |    |    --- add_paper.js
 |   |    |    +-- student_manage            ---学生管理
 |   |    |    |    --- add_student.js       ---添加学生
 |   |    |    |    --- query_student.js     ---查询、修改、删除学生
@@ -129,13 +129,13 @@ http://liqianwen.remmli.com:8080/#/login
 |   |    |    +-- personal_center           ---个人中心
 |   |    |    |    --- change_manage.js     ---修改密码
 |   |    |    +-- header_bar                ---顶部菜单
-|   |    |    |    --- index.js     
+|   |    |    |    --- add_paper.js     
 |   |    |    +-- homepage                      ---主页
 |   |    |    |    +-- subpage                  ---子模块
 |   |    |    |    |    --- fast_enter_card.js  ---快速进入卡片子模块
-|   |    |    |    --- index.js     
-|   |    |    --- index.js
-|   --- index.js                            ---项目的整体js入口文件
+|   |    |    |    --- add_paper.js     
+|   |    |    --- add_paper.js
+|   --- add_paper.js                            ---项目的整体js入口文件
 --- postcss.config.js                       ---postcss插件配置文件，用于css代码压缩
 --- webpack.config.js                       ---webpack开发环境配置
 --- webpack.production.config.js            ---webpack生产环境配置

@@ -20,7 +20,7 @@ export default class Homepage extends React.Component {
           </Link>
         </div>
         <div className="fast-enter-card">
-          <Link to="/main/choose_questions">
+          <Link to="/main/p_manage">
             <FastEnterCard title="考试出卷" icon="profile"></FastEnterCard>
           </Link>
         </div>
@@ -34,20 +34,9 @@ export default class Homepage extends React.Component {
             <FastEnterCard title="学生管理" icon="usergroup-add"></FastEnterCard>
           </Link>
         </div>
-
-        <div className="fast-enter-card">
-          <Link to="/main/teacher_manage/query_teacher">
-            <FastEnterCard title="教师管理" icon="user-add"></FastEnterCard>
-          </Link>
-        </div>
-        <div className="fast-enter-card">
-          <Link to="/main/class_manage">
-            <FastEnterCard title="班级管理" icon="layout"></FastEnterCard>
-          </Link>
-        </div>
         <div className="fast-enter-card">
           <Link to="/main/paper_manage/scoring">
-            <FastEnterCard title="在线阅卷" icon="desktop"></FastEnterCard>
+            <FastEnterCard title="考试管理" icon="desktop"></FastEnterCard>
           </Link>
         </div>
       </div>

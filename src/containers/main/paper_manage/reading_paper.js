@@ -135,7 +135,7 @@ class ReadingPaper extends React.Component {
   render(){
     return(
       <div>
-        <BreadcrumbCustom pathList={['试卷管理','在线阅卷','所有试卷','正在阅卷']}></BreadcrumbCustom>
+        <BreadcrumbCustom pathList={['考试管理','在线阅卷','所有试卷','正在阅卷']}></BreadcrumbCustom>
         <div className="reading-paper-content">
           <Row>
             <Button type="primary" className="f-r m-b-20"><Link to={`/main/paper_manage/scoring/all_papers/${this.props.match.params.paperId}/${this.props.match.params.classId}`}><Icon type="left" />返回</Link></Button>

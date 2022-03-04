@@ -146,7 +146,7 @@ class AllPapers extends React.Component {
 
     return(
       <div>
-        <BreadcrumbCustom pathList={['试卷管理',['在线阅卷'],['所有试卷']]}></BreadcrumbCustom>
+        <BreadcrumbCustom pathList={['考试管理',['在线阅卷'],['所有试卷']]}></BreadcrumbCustom>
         <div className="scoring-paper-content">
           <Row>
             <Button type="primary" className="f-r m-b-20"><Link to="/main/paper_manage/scoring"><Icon type="left" />返回</Link></Button>

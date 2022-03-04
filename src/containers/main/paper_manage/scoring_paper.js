@@ -297,7 +297,7 @@ class ScoringPaper extends React.Component {
 
     return(
       <div>
-        <BreadcrumbCustom pathList={['试卷管理',['在线阅卷']]}></BreadcrumbCustom>
+        <BreadcrumbCustom pathList={['考试管理',['在线阅卷']]}></BreadcrumbCustom>
         <div className="scoring-paper-content">
           <div className="m-b-20">
             <Row>

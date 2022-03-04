@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
-  entry : './src/index.js',
+  entry : './src/add_paper.js',
   output : {
     path : path.resolve(__dirname,'dist'),
     filename : './js/bundle.js'

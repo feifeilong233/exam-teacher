@@ -311,7 +311,7 @@ class QueryStudent extends React.Component {
 
     return(
       <div>
-        <BreadcrumbCustom pathList={['班级管理','查询班级']}></BreadcrumbCustom>
+        <BreadcrumbCustom pathList={['学生管理','查询学生']}></BreadcrumbCustom>
         <div className="class-manage-content">
           <Row>
             <Col span={24}>

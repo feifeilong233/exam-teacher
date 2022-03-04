@@ -19,11 +19,13 @@ import HeaderBar from './header_bar'
 //课程首页
 import Homepage from './homepage/index.js'
 
-//试题录入
+//题库管理
 import QCheckin from './q_checkin/index.js';
+import QueryQuestion from "./q_checkin/query_question";
 
-//出卷
-import ChooseQuestions from './choose_questions/index.js';
+//试卷管理
+import ChooseQuestions from './p_manage/add_paper.js';
+import QueryPaper from "./p_manage/query_paper";
 
 //成绩查询
 import ScoreSearch from './score_search/index.js';
@@ -31,16 +33,6 @@ import ScoreSearch from './score_search/index.js';
 //学生管理组件
 import AddStudent from './student_manage/add_student'
 import QueryStudent from './student_manage/query_student'
-
-/*
-//教师管理
-import AddTeacher from './teacher_manage/add_teacher';
-import QueryTeacher from './teacher_manage/query_teacher';
-
-//班级管理
-import AddClass from './class_manage/add_class.js';
-import QueryClass from './class_manage/query_class.js';
-*/
 
 //考试管理组件
 import CreateExam from './paper_manage/create_exam.js';
@@ -64,20 +56,24 @@ class Main extends React.Component {
 			subjectArr:[],//科目数组
 			roleSet : '',
 		}
-		this.rootSubmenuKeys = ['q_checkin', 'student_manage','teacher_manage','paper_manage','personal_center','class_manage'];
+		this.rootSubmenuKeys = ['q_manage','p_manage','student_manage','paper_manage','personal_center'];
 	}
 
 	//根据路由判断 用户选择了菜单中的哪一项
 	whoIsChecked(){
-		if(this.props.location.pathname.indexOf('/main/q_checkin') != -1) {//试题录入
+		if(this.props.location.pathname.indexOf('/main/q_checkin') != -1) {//题库管理
 			this.setState({defaultOpenKeys : ['q_checkin']})
 			this.setState({openKeys : ['q_checkin']})
 			let arr = this.props.location.pathname.split('/');
 			let str = arr[arr.length-2] + '_' + arr[arr.length-1];
 			this.setState({defaultSelectedKeys : [str]})
 		}
-		else if(this.props.location.pathname.indexOf('/main/choose_questions') != -1) {//试题查询
-			this.setState({defaultSelectedKeys : ['choose_questions']})
+		else if(this.props.location.pathname.indexOf('/main/p_manage') != -1) {//试卷管理
+			this.setState({defaultOpenKeys : ['p_manage']})
+			this.setState({openKeys : ['p_manage']})
+			let arr = this.props.location.pathname.split('/');
+			let str = arr[arr.length-1];
+			this.setState({defaultSelectedKeys : [str]})
 		}
 		else if(this.props.location.pathname.indexOf('/main/score_search') != -1) {//成绩查询
 			this.setState({defaultSelectedKeys : ['score_search']})
@@ -89,22 +85,6 @@ class Main extends React.Component {
 			let str = arr[arr.length-1];
 			this.setState({defaultSelectedKeys : [str]})
 		}
-		/*
-		else if(this.props.location.pathname.indexOf('/main/teacher_manage') != -1) {//教师管理
-			this.setState({defaultOpenKeys : ['teacher_manage']})
-			this.setState({openKeys : ['teacher_manage']})
-			let arr = this.props.location.pathname.split('/');
-			let str = arr[arr.length-1];
-			this.setState({defaultSelectedKeys : [str]})
-		}
-		else if(this.props.location.pathname.indexOf('/main/class_manage') != -1) {//班级管理
-			this.setState({defaultOpenKeys : ['class_manage']})
-			this.setState({openKeys : ['class_manage']})
-			let arr = this.props.location.pathname.split('/');
-			let str = arr[arr.length-1];
-			this.setState({defaultSelectedKeys : [str]})
-		}
-		*/
 		else if(this.props.location.pathname.indexOf('/main/paper_manage') != -1) {//考试管理
 			this.setState({defaultOpenKeys : ['paper_manage']})
 			this.setState({openKeys : ['paper_manage']})
@@ -213,15 +193,16 @@ class Main extends React.Component {
 											<span>课程主页</span>
 										</Link>
 									</Menu.Item>
-									<SubMenu key="q_checkin" title={<span><Icon type="form" /><span>试题录入</span></span>}>
-										{subjectArr}
+									<SubMenu key="q_manage" title={<span><Icon type="form" /><span>题库管理</span></span>}>
+										<SubMenu key="q_checkin" title={<span>试题录入</span>}>
+											{subjectArr}
+										</SubMenu>
+										<Menu.Item key="questions_manage"><Link to="/main/q_checkin/query_question">试题管理</Link></Menu.Item>
 									</SubMenu>
-									<Menu.Item key="choose_questions">
-										<Link to="/main/choose_questions">
-											<Icon type="profile" />
-											<span>出卷</span>
-										</Link>
-									</Menu.Item>
+									<SubMenu key="p_manage" title={<span><Icon type="profile" /><span>试卷管理</span></span>}>
+										<Menu.Item key="p_manage"><Link to="/main/p_manage/add_paper">出卷</Link></Menu.Item>
+										<Menu.Item key="manage_paper"><Link to="/main/p_manage/query_paper">试卷管理</Link></Menu.Item>
+									</SubMenu>
 									<Menu.Item key="score_search">
 										<Link to="/main/score_search">
 											<Icon type="search" />
@@ -232,32 +213,12 @@ class Main extends React.Component {
 										<Menu.Item key="add_student"><Link to="/main/student_manage/add_student">添加学生</Link></Menu.Item>
 										<Menu.Item key="query_student"><Link to="/main/student_manage/query_student">查询学生</Link></Menu.Item>
 									</SubMenu>
-									{
-										/*
-										this.state.roleSet == '1' ? <SubMenu key="teacher_manage" title={<span><Icon type="user-add" /><span>教师管理</span></span>}>
-												<Menu.Item key="add_teacher"><Link to="/main/teacher_manage/add_teacher">添加教师</Link></Menu.Item>
-												<Menu.Item key="query_teacher"><Link to="/main/teacher_manage/query_teacher">查询教师</Link></Menu.Item>
-											</SubMenu> :
-											''
-										 */
-									}
-									{
-										/*
-										<SubMenu key="class_manage"
-												 title={<span><Icon type="layout"/><span>班级管理</span></span>}>
-											<Menu.Item key="add_class"><Link
-												to="/main/class_manage/add_class">添加班级</Link></Menu.Item>
-											<Menu.Item key="query_class"><Link
-												to="/main/class_manage/query_class">查询班级</Link></Menu.Item>
-										</SubMenu>
-										 */
-									}
 									<SubMenu key="paper_manage" title={<span><Icon type="desktop" /><span>考试管理</span></span>}>
-										<Menu.Item key="create_exam"><Link to="/main/paper_manage/create_exam">创建考试</Link></Menu.Item>
-										<Menu.Item key="scoring"><Link to="/main/paper_manage/scoring">在线阅卷</Link></Menu.Item>
+										<Menu.Item key="manage_exam"><Link to="/main/paper_manage/create_exam">创建考试</Link></Menu.Item>
+										<Menu.Item key="scoring"><Link to="/main/paper_manage/scoring">考试管理</Link></Menu.Item>
 									</SubMenu>
 									<SubMenu key="personal_center" title={<span><Icon type="user" /><span>个人中心</span></span>}>
-										<Menu.Item key="change_password"><Link to="/main/personal_center/change_password">修改密码</Link></Menu.Item>
+										<Menu.Item key="change_password"><Link to="/main/personal_center/change_password">用户信息</Link></Menu.Item>
 									</SubMenu>
 								</Menu>
 						</Layout>
@@ -270,25 +231,18 @@ class Main extends React.Component {
 							{/* 主页 */}
 							<Route path="/main/homepage" component={Homepage}/>
 
-							{/* 试题录入 */}
+							{/* 题库管理 */}
 							<Route path="/main/q_checkin/:type/:level" component={QCheckin}/>
+							<Route path="/main/q_checkin/query_question" component={QueryQuestion}/>
 
-							<Route path="/main/choose_questions" component={ChooseQuestions}/>
+							<Route path="/main/p_manage/add_paper" component={ChooseQuestions}/>
+							<Route path="/main/p_manage/query_paper" component={QueryPaper}/>
+
 							<Route path="/main/score_search" component={ScoreSearch}/>
 
 							{/* 学生管理 */}
 							<Route path="/main/student_manage/add_student" component={AddStudent}/>
 							<Route path="/main/student_manage/query_student" component={QueryStudent}/>
-
-							{/* 教师管理
-							<Route path="/main/teacher_manage/add_teacher" component={AddTeacher}/>
-							<Route path="/main/teacher_manage/query_teacher" component={QueryTeacher}/>
-							*/}
-
-							{/* 班级管理
-							<Route path="/main/class_manage/add_class" component={AddClass}/>
-							<Route path="/main/class_manage/query_class" component={QueryClass}/>
-							*/}
 
 							{/* 考试管理 */}
 							<Route path="/main/paper_manage/create_exam" component={CreateExam}/>

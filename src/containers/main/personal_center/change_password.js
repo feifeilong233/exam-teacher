@@ -12,7 +12,7 @@ class ChangePassword extends React.Component {
   constructor(){
     super()
     this.state = {
-      pathList : ['个人中心','修改密码'],//面包屑路径
+      pathList : ['个人中心','用户信息'],//面包屑路径
     }
   }
 

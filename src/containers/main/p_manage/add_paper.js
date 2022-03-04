@@ -21,7 +21,7 @@ class ChooseQuestions extends React.Component {
   constructor(){
     super()
     this.state = {
-      pathList : ['出卷'],
+      pathList : ['试卷管理', '出卷'],
       localCounter : 0,
       ChooseQuestionList :[{//出卷列表
         "score": 0,

@@ -13,7 +13,7 @@ class AddStudent extends React.Component {
   constructor(){
     super()
     this.state = {
-      pathList : ['班级管理','添加班级'],//面包屑路径
+      pathList : ['学生管理','添加学生'],//面包屑路径
     }
   }
 
