@@ -4,20 +4,7 @@
 
 **开发环境使用Webpack搭建**
 
-***
 
-**项目演示地址**
-
-```js
-http://liqianwen.remmli.com:8080/#/login
-```
-
-**注意：演示地址并不是项目真实线上地址，只是演示而已~ 服务器带宽太低，所以打开较慢...请谅解**
-
-***
-
-前言
-> 这个是本系统的教师端 学生端请点击：[在线考试系统（学生端）](https://github.com/remmlqw/exam-student)
 
 ### 功能模块
 
@@ -48,18 +35,6 @@ http://liqianwen.remmli.com:8080/#/login
     - 删除学生
     - 修改学生
     - 查询学生
-
-- 教师信息管理（超级管理员权限）
-    - 添加教师
-    - 删除教师
-    - 修改教师
-    - 查询教师
-
-- 班级信息管理
-    - 添加班级
-    - 删除班级
-    - 修改班级
-    - 查询班级
 
 - 考试管理
     - 创建考试
@@ -113,12 +88,6 @@ http://liqianwen.remmli.com:8080/#/login
 |   |    |    +-- student_manage            ---学生管理
 |   |    |    |    --- add_student.js       ---添加学生
 |   |    |    |    --- query_student.js     ---查询、修改、删除学生
-|   |    |    +-- teacher_manage            ---教师管理
-|   |    |    |    --- add_student.js       ---添加教师
-|   |    |    |    --- query_student.js     ---查询、修改、删除教师
-|   |    |    +-- class_manage              ---班级管理
-|   |    |    |    --- add_student.js       ---添加班级
-|   |    |    |    --- query_student.js     ---查询、修改、删除班级
 |   |    |    +-- paper_manage              ---考试管理
 |   |    |    |    --- create_exam.js       ---创建考试
 |   |    |    |    +-- subpage              ---子模块
@@ -164,18 +133,6 @@ http://liqianwen.remmli.com:8080/#/login
 **成绩查询**
 
 ![Image text](https://raw.githubusercontent.com/remmlqw/img-folder/master/score_search.png)
-
-**班级管理**
-学生管理、教师管理、班级管理 界面雷同 所以只放了班级管理的截图
-
-添加班级
-![Image text](https://raw.githubusercontent.com/remmlqw/img-folder/master/add_class.png)
-
-查询、删除
-![Image text](https://raw.githubusercontent.com/remmlqw/img-folder/master/query_class.png)
-
-修改班级
-![Image text](https://raw.githubusercontent.com/remmlqw/img-folder/master/xiugai.png)
 
 **考试管理**
 
